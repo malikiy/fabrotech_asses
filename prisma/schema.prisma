@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id         String    @id(map: "user_pk") @db.VarChar
+  username   String?   @db.VarChar
+  password   String?   @db.VarChar
+  role       String?   @db.VarChar
+  created_at DateTime? @db.Timestamptz(6)
+  updated_at DateTime? @db.Timestamptz(6)
+}
+
+model player_score {
+  id          String    @id(map: "player_score_pk") @db.VarChar
+  player_name String?   @db.VarChar
+  score       Int?
+  created_at  DateTime? @db.Timestamptz(6)
+  updated_at  DateTime? @db.Timestamptz(6)
+}
