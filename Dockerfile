@@ -26,4 +26,4 @@ RUN npx prisma generate --schema="./prisma/schema.prisma"
 
 EXPOSE 4020
 
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "start" ]
